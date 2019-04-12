@@ -32,6 +32,16 @@
       color: $color-white;
       border-color: $color-blue;
     }
+        &-eclipse {
+      background: $color-eclipse;
+color: $color-white;
+        border-color: $color-green;
+    }
+        &-sargasso {
+      background: $color-sargasso;
+color: $color-white;
+        border-color: $color-green;
+    }
     
 
   }
