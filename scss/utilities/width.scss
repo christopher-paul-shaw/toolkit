@@ -1,0 +1,12 @@
+/* Width */
+$layout_columns : 12;
+@for $i from 1 through $layout_columns {
+  .u-width {
+    &--#{$i}-#{$layout_columns} {
+      width: 100%;
+      @include md {
+        width: percentage($i/$layout_columns);
+      }  
+    }
+  }
+}

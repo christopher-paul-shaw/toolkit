@@ -1,0 +1,72 @@
+/* Margin and Padding */
+$sizes : (
+    "huge" : 40px,
+    "large": 32px,
+    "medium" : 24px,
+    "small": 16px,
+    "tiny": 8px
+);
+
+@each $label, $v in $sizes {
+ 
+  .u-margin__#{$label} {
+    @include md {
+      margin: $v; 
+    }
+    
+    &--top {
+      @include md {
+        margin-top: #{$v}; 
+      }
+    }
+    &--right {
+      @include md {
+        margin-right: #{$v};
+      }
+    }
+    &--bottom {
+      @include md {
+        margin-bottom: #{$v}; 
+      }
+    }
+    &--left {
+      @include md {
+        margin-left: #{$v}; 
+      }
+    }
+
+  }
+
+  .u-padding__#{$label} {
+    @include md {
+      padding: $v; 
+    }
+    
+    &--top {
+      @include md {
+        padding-top: #{$v}; 
+      }
+    }
+    &--right {
+      @include md {
+        padding-right: #{$v};
+      }
+    }
+    &--bottom {
+      @include md {
+        padding-bottom: #{$v}; 
+      }
+    }
+    &--left {
+      @include md {
+        padding-left: #{$v}; 
+      }
+    }
+    &--vertical {
+      @include md {
+        padding-top: #{$v}; 
+        padding-bottom: #{$v}; 
+      }
+    }
+  }
+}

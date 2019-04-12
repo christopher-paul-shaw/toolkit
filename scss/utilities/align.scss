@@ -1,0 +1,22 @@
+
+.u-align__text {
+  text-align: center;
+  @include sm {
+    text-align: left;
+  }
+  
+  &--right {
+    text-align: center;
+    @include sm {
+      text-align: right;
+    }
+  }
+  
+  &--center {
+    text-align: center;
+    @include sm {
+      text-align: center;
+    }
+  }
+
+}

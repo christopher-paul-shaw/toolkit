@@ -1,0 +1,37 @@
+  .u-theme {
+      background: $color-white;
+      border-color: $color-grey;
+      color: $color-black;
+      
+      &-green {
+        background: $color-green;
+        color: $color-white;
+        border-color: $color-green;
+      }
+      
+    &-grey {
+      background: $color-grey-light;
+      color: $color-black;
+      border-color: $color-grey-dark;
+    }
+    
+    &-orange {
+      background: $color-orange;
+      color: $color-white;
+      border-color: $color-orange;
+    }
+    
+    &-red {
+      background: $color-red;
+      color: $color-white;
+      border-color: $color-red;
+    }
+    
+    &-blue {
+      background: $color-blue;
+      color: $color-white;
+      border-color: $color-blue;
+    }
+    
+
+  }

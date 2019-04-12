@@ -1,0 +1,7 @@
+.o-layout {
+  display: flex;
+  flex-wrap: wrap;
+  .o-layout__item {
+    flex: auto;
+  }
+}
