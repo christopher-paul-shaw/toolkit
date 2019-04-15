@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .o-layout {
   display: flex;
   flex-wrap: wrap;
