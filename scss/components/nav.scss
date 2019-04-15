@@ -1,0 +1,50 @@
+.c-nav {
+  background: $color-grey;
+
+  &__menu label {
+    background: $color-grey;
+  }
+
+  &__menu label:hover {
+    background: $color-grey-light;
+  }
+
+  &__toggle--checkbox:checked ~ &__menu,
+  &__toggle--checkbox:checked ~ &__menu label {
+    display: block;
+  }
+  &__toggle {
+    display: block;
+  }
+  &__menu,
+  &__toggle--checkbox {
+    display: none;
+  }
+
+  &__menu {
+    width: 100%;
+    left: 0;
+    position: absolute;
+  }
+
+  &__menu label {
+    display: block;
+    width: 100%;
+  }
+
+  @include sm {
+    &__menu {
+      display: inline-block;
+      position: relative;
+    }
+
+    &__toggle {
+      display: none;
+    }
+    &__toggle--checkbox:checked ~ &__menu label,
+    &__menu label {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}

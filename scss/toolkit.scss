@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
 }
 
 /* Settings */
@@ -10,6 +11,17 @@
 /* Objects */
 @import "objects/layout.scss";
 @import "objects/container.scss";
+
+/* Components */
+@import "components/accordion.scss";
+@import "components/blocks.scss";
+@import "components/box.scss";
+@import "components/button.scss";
+@import "components/image.scss";
+@import "components/input.scss";
+@import "components/nav.scss";
+@import "components/tabs.scss";
+
 
 /* Utilities */
 @import "utilities/align.scss";

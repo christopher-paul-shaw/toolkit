@@ -1,0 +1,22 @@
+.o-accordion {
+  &__label {
+    display: block;
+  }
+
+  &__block,
+  &__toggle {
+    display: none;
+  }
+
+  &__toggle:checked + &__label + &__block {
+    display: block;
+  }
+}
+
+.c-accordion {
+  .o-accordion__label {
+    border: 1px solid $color-grey;
+  }
+  .o-accordion__toggle:checked + label {
+  }
+}

@@ -1,0 +1,23 @@
+.o-tabs {
+  &__label {
+    display: inline-block;
+  }
+  &__toggle,
+  &__tab {
+    display: none;
+  }
+  &__toggle:checked + &__tab {
+    display: block;
+  }
+}
+
+.c-tabs {
+  &__label {
+    border: 1px solid #ccc;
+    border-bottom: 0px;
+  }
+
+  &__tab {
+    border: 1px solid #ccc;
+  }
+}

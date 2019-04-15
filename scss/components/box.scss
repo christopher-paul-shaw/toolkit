@@ -1,0 +1,8 @@
+.o-box {
+  display: block;
+}
+
+.c-box {
+  overflow: hidden;
+  @include core();
+}

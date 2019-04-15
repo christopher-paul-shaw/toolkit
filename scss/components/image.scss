@@ -1,0 +1,10 @@
+.c-image {
+  max-width: 100%;
+  @include core();
+  &__size--small {
+    width: 80px;
+  }
+  &__size--medium {
+    width: 120px;
+  }
+}

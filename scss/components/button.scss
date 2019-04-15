@@ -1,0 +1,12 @@
+.o-button {
+  display: inline-block;
+  border: 0;
+}
+
+.c-button {
+  background: #ccc;
+  @include core();
+  &:hover {
+    filter: brightness(110%);
+  }
+}
