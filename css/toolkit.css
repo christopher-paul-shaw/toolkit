@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* Settings */
 /* Objects */
 .o-layout {
@@ -57,34 +61,44 @@
 }
 
 .u-theme {
-  background: white;
+  background: #fff;
   border-color: #ccc;
-  color: black;
+  color: #111;
 }
 .u-theme-green {
-  background: green;
-  color: white;
-  border-color: green;
+  background: #006E6D;
+  color: #fff;
+  border-color: #006E6D;
 }
 .u-theme-grey {
   background: #efefef;
-  color: black;
+  color: #111;
   border-color: #bdbdbd;
 }
 .u-theme-orange {
-  background: orange;
-  color: white;
-  border-color: orange;
+  background: #E08119;
+  color: #fff;
+  border-color: #E08119;
 }
 .u-theme-red {
-  background: red;
-  color: white;
-  border-color: red;
+  background: #9B1B30;
+  color: #fff;
+  border-color: #9B1B30;
 }
 .u-theme-blue {
-  background: blue;
-  color: white;
-  border-color: blue;
+  background: #3F69AA;
+  color: #fff;
+  border-color: #3F69AA;
+}
+.u-theme-eclipse {
+  background: #343148;
+  color: #fff;
+  border-color: #006E6D;
+}
+.u-theme-sargasso {
+  background: #485167;
+  color: #fff;
+  border-color: #006E6D;
 }
 
 /* Width */
