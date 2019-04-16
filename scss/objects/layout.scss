@@ -1,7 +1,10 @@
 .o-layout {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   .o-layout__item {
+    display: flex;
     flex: auto;
   }
 }
