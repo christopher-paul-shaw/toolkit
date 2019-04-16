@@ -20,3 +20,13 @@
   }
 
 }
+
+.u-align__content {
+  align-items: center;
+  &--top {
+     align-items: top;
+  }
+  &--bottom {
+     align-items: bottom;
+  }
+}
