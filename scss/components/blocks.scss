@@ -1,18 +1,3 @@
-.o-blocks {
-  &__label {
-    display: block;
-  }
-
-  &__block,
-  &__toggle {
-    display: none;
-  }
-
-  &__toggle:checked + &__label + &__block {
-    display: block;
-  }
-}
-
 .c-blocks {
   .o-blocks__label {
     border: 1px solid #ccc;

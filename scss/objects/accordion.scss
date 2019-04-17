@@ -1,0 +1,14 @@
+.o-accordion {
+  &__label {
+    display: block;
+  }
+
+  &__block,
+  &__toggle {
+    display: none;
+  }
+
+  &__toggle:checked + &__label + &__block {
+    display: block;
+  }
+}

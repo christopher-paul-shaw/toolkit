@@ -1,0 +1,12 @@
+.o-tabs {
+  &__label {
+    display: inline-block;
+  }
+  &__toggle,
+  &__tab {
+    display: none;
+  }
+  &__toggle:checked + &__tab {
+    display: block;
+  }
+}
