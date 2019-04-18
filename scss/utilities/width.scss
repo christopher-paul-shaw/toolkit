@@ -1,12 +1,20 @@
-/* Width */
-$layout_columns : 12;
+$layout_columns: 12;
 @for $i from 1 through $layout_columns {
   .u-width {
     &--#{$i}-#{$layout_columns} {
-      width: 100%;
-      @include md {
         width: percentage($i/$layout_columns);
-      }  
+    }
+  }
+}
+
+@each $bp-name, $bp-value in $breakpoints {
+  @media screen and (min-width: $bp-value) {
+    @for $i from 1 through $layout_columns {
+      .u-width {
+        &--#{$i}-#{$layout_columns}\@#{$bp-name} {
+            width: percentage($i/$layout_columns);
+        }
+      }
     }
   }
 }

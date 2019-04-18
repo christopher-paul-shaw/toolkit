@@ -1,71 +1,43 @@
-/* Margin and Padding */
-$sizes : (
-    "huge" : 40px,
-    "large": 32px,
-    "medium" : 24px,
-    "small": 16px,
-    "tiny": 8px
-);
+/* Padding, Margin */
+ @each $os-name, $os-value in $offsets {
+      .u-margin-#{$os-name} {
+        margin: #{$os-value};
+      }
+      .u-padding-#{$os-name}{
+        padding: #{$os-value};
+      }
+      @each $direction in $adjust-directions {
+        .u-margin-#{$direction}--#{$os-name} {
+          margin-#{$direction}: #{$os-value};
+        }
 
-@each $label, $v in $sizes {
- 
-  .u-margin__#{$label} {
-    @include md {
-      margin: $v; 
-    }
+        .u-padding-#{$direction}--#{$os-name} {
+          padding-#{$direction}: #{$os-value};
+        }
+      }
+}
+
+@each $bp-name, $bp-value in $breakpoints {
+  @media screen and (max-width: $bp-value) {
     
-    &--top {
-      @include md {
-        margin-top: #{$v}; 
-      }
-    }
-    &--right {
-      @include md {
-        margin-right: #{$v};
-      }
-    }
-    &--bottom {
-      @include md {
-        margin-bottom: #{$v}; 
-      }
-    }
-    &--left {
-      @include md {
-        margin-left: #{$v}; 
-      }
-    }
+    @each $os-name, $os-value in $offsets {
 
-  }
+      .u-margin-#{$os-name}\@#{$bp-name} {
+        margin: #{$os-value};
+      }
 
-  .u-padding__#{$label} {
-    @include md {
-      padding: $v; 
-    }
-    
-    &--top {
-      @include md {
-        padding-top: #{$v}; 
+      .u-padding-#{$os-name}\@#{$bp-name} {
+        padding: #{$os-value};
       }
-    }
-    &--right {
-      @include md {
-        padding-right: #{$v};
-      }
-    }
-    &--bottom {
-      @include md {
-        padding-bottom: #{$v}; 
-      }
-    }
-    &--left {
-      @include md {
-        padding-left: #{$v}; 
-      }
-    }
-    &--vertical {
-      @include md {
-        padding-top: #{$v}; 
-        padding-bottom: #{$v}; 
+
+      @each $direction in $adjust-directions {
+        .u-margin-#{$direction}-#{$os-name}\@#{$bp-name} {
+          margin-#{$direction}: #{$os-value};
+        }
+
+        .u-padding-#{$direction}-#{$os-name}\@#{$bp-name} {
+          padding-#{$direction}: #{$os-value};
+        }
       }
     }
   }

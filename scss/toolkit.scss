@@ -4,6 +4,11 @@
 }
 
 /* Settings */
+@import "settings/breakpoints.scss";
+@import "settings/directions.scss";
+@import "settings/offsets.scss";
+@import "settings/font-sizes.scss";
+
 @import "settings/screen.scss";
 @import "settings/colors.scss";
 @import "settings/core.scss";

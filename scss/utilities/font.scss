@@ -1,15 +1,25 @@
-.u-font__size {
-  font-size: 14pt;
-  &--alpha {
-    font-size: 28pt;
-  }
-  &--bravo {
-    font-size: 24pt;
-  }
-  &--charlie {
-    font-size: 20pt;
-  }
-  &--delta {
-    font-size: 16pt;
-  }
+.u-font {
+
+  &-size {
+    font-size: $font-size-default;
+
+     @each $name, $value in $font-sizes {
+      &--#{$name} {
+        font-size: #{$value};
+      }
+     }
+
+     @each $bp-name, $bp-value in $breakpoints {
+         @each $name, $value in $font-sizes {
+          &--#{$name}\@#{$bp-name} {
+            font-size: #{$value};
+          }
+         }
+     }
+   }
+
+   &--bold {
+    font-weight: bold;
+   }
+
 }
