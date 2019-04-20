@@ -13,7 +13,7 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
           - v1-dependencies-
-      - run: composer install -n --prefer-dist
+      - run: sass ./scss/toolkit.scss ./css/toolkit.css
       - persist_to_workspace:
           root: /home/circleci/repo
           paths:
