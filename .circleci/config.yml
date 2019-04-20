@@ -79,7 +79,7 @@ jobs:
           cd \$stream_directory
           tar -xzf -
           echo 'Decompressed Archive'
-          deploy_directory=/var/www/www.chris-shaw.com
+          deploy_directory=/var/www/toolkit.chris-shaw.com
           rm -rf \$deploy_directory
           echo 'Removed Old Directory'
           mkdir -p \$deploy_directory
