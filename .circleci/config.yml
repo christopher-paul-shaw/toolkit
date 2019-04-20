@@ -1,0 +1,116 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/php:7.1-cli
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+          - "77:05:d2:ef:29:8c:a3:11:09:1e:80:2d:ca:bf:38:56"
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "composer.json" }}
+          - v1-dependencies-
+      - run: composer install -n --prefer-dist
+      - persist_to_workspace:
+          root: /home/circleci/repo
+          paths:
+            - ./  
+  branch-deploy:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/php:7.1-cli
+    steps:
+      - attach_workspace:
+          at: /home/circleci/repo
+      - run: |
+          set -e
+          cd /home/circleci
+          chmod -R g+w ./repo/www/
+          tar --exclude=repo/.git -czf - repo/ | ssh -o StrictHostKeyChecking=no deploy@chris-shaw.com "
+          set -e
+          stream_directory=stream_$CIRCLE_BRANCH
+          rm -rf \$stream_directory
+          mkdir \$stream_directory
+          cd \$stream_directory
+          tar -xzf -
+          echo 'Decompressed Archive'
+          deploy_directory=/var/www/dev/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH
+          rm -rf \$deploy_directory
+          echo 'Removed Old Directory'
+          mkdir -p \$deploy_directory
+          echo 'Created New Directory'
+          cp --no-preserve=mode,ownership --recursive ./repo \$deploy_directory.new
+          if [ -d "\$deploy_directory.old" ]; then echo -n 'Removing old directory ... '; rm -rf \$deploy_directory.old; echo 'Done.'; fi
+          echo -n 'Archiving old directory ... '
+          if [ -d "\$deploy_directory" ]; then mv \$deploy_directory \$deploy_directory.old; fi
+          echo 'Done.'
+          echo -n 'Moving files to new directory ... '
+          mv \$deploy_directory.new \$deploy_directory
+          echo 'Done.'
+          cd \$deploy_directory
+          echo 'Entered new Directory'
+          chmod 777 -R www/
+          chmod -R g+s www/
+          echo 'Running Portfolo Cron'
+          cd cron/
+          php portfolio.php
+          echo 'Completed Deployment'
+          "
+  master-deploy:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/php:7.1-cli
+    steps:
+      - attach_workspace:
+          at: /home/circleci/repo       
+      - run: |
+
+          set -e
+          cd /home/circleci
+          chmod -R g+w ./repo/www/
+          tar --exclude=repo/.git -czf - repo/ | ssh -o StrictHostKeyChecking=no deploy@chris-shaw.com "
+          set -e
+          stream_directory=stream_$CIRCLE_BRANCH
+          rm -rf \$stream_directory
+          mkdir \$stream_directory
+          cd \$stream_directory
+          tar -xzf -
+          echo 'Decompressed Archive'
+          deploy_directory=/var/www/www.chris-shaw.com
+          rm -rf \$deploy_directory
+          echo 'Removed Old Directory'
+          mkdir -p \$deploy_directory
+          echo 'Created New Directory'
+          cp --no-preserve=mode,ownership --recursive ./repo \$deploy_directory.new
+          if [ -d "\$deploy_directory.old" ]; then echo -n 'Removing old directory ... '; rm -rf \$deploy_directory.old; echo 'Done.'; fi
+          echo -n 'Archiving old directory ... '
+          if [ -d "\$deploy_directory" ]; then mv \$deploy_directory \$deploy_directory.old; fi
+          echo 'Done.'
+          echo -n 'Moving files to new directory ... '
+          mv \$deploy_directory.new \$deploy_directory
+          echo 'Done.'
+          cd \$deploy_directory
+          echo 'Entered new Directory'
+          chmod 777 -R www/
+          chmod -R g+s www/
+          "      
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - branch-deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: master
+      - master-deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
