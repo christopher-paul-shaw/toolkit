@@ -1,16 +1,15 @@
 /* Padding, Margin */
  @each $os-name, $os-value in $offsets {
-      .u-margin-#{$os-name} {
+      .u-margin--#{$os-name} {
         margin: #{$os-value};
       }
-      .u-padding-#{$os-name}{
+      .u-padding--#{$os-name}{
         padding: #{$os-value};
       }
       @each $direction in $adjust-directions {
         .u-margin-#{$direction}--#{$os-name} {
           margin-#{$direction}: #{$os-value};
         }
-
         .u-padding-#{$direction}--#{$os-name} {
           padding-#{$direction}: #{$os-value};
         }
@@ -22,20 +21,20 @@
     
     @each $os-name, $os-value in $offsets {
 
-      .u-margin-#{$os-name}\@#{$bp-name} {
+      .u-margin--#{$os-name}\@#{$bp-name} {
         margin: #{$os-value};
       }
 
-      .u-padding-#{$os-name}\@#{$bp-name} {
+      .u-padding--#{$os-name}\@#{$bp-name} {
         padding: #{$os-value};
       }
 
       @each $direction in $adjust-directions {
-        .u-margin-#{$direction}-#{$os-name}\@#{$bp-name} {
+        .u-margin-#{$direction}--#{$os-name}\@#{$bp-name} {
           margin-#{$direction}: #{$os-value};
         }
 
-        .u-padding-#{$direction}-#{$os-name}\@#{$bp-name} {
+        .u-padding-#{$direction}--#{$os-name}\@#{$bp-name} {
           padding-#{$direction}: #{$os-value};
         }
       }
