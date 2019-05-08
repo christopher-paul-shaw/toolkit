@@ -4,6 +4,9 @@
 }
 
 @import "settings/screen.scss";
+@import "settings/breakpoints.scss";
+@import "settings/offsets.scss";
+@import "settings/directions.scss";
 
 @import "objects/layout.scss";
 @import "objects/container.scss";

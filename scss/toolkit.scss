@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
+	font-weight: normal;
 }
 
 /* Settings */
@@ -18,6 +19,7 @@
 @import "objects/blocks.scss";
 @import "objects/box.scss";
 @import "objects/button.scss";
+@import "objects/list.scss";
 @import "objects/tabs.scss";
 
 @import "objects/layout.scss";
@@ -35,8 +37,5 @@
 
 
 /* Utilities */
-@import "utilities/align.scss";
 @import "utilities/font.scss";
 @import "utilities/theme.scss";
-@import "utilities/width.scss";
-@import "utilities/spacing.scss";

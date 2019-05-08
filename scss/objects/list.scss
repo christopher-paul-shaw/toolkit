@@ -1,0 +1,21 @@
+.o-list {
+	margin: 0;
+	padding: 0;
+	li {
+		display: block;
+		width: 100%;
+
+	} 
+
+	&--inline {
+		li {
+			display: inline-block;
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+	
+}
