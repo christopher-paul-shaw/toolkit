@@ -13,7 +13,7 @@ jobs:
       - run: mkdir www
       - run: mkdir www/css/
       - run: ./node_modules/node-sass/bin/node-sass ./scss/toolkit.scss ./www/css/toolkit.css
-      - run: ./node_modules/node-sass/bin/node-sass ./scss/scaffold.scss ./www/css/scaffold.css
+      - run: ./node_modules/node-sass/bin/node-sass ./scss/scaffolding.scss ./www/css/scaffolding.css
       - run: cp index.html ./www/index.html
       - persist_to_workspace:
           root: /home/circleci/repo
