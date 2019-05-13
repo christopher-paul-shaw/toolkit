@@ -5,9 +5,10 @@
 }
 
 /* Settings */
+@import "settings/screen.scss";
 @import "settings/breakpoints.scss";
-@import "settings/directions.scss";
 @import "settings/offsets.scss";
+@import "settings/directions.scss";
 @import "settings/font-sizes.scss";
 
 @import "settings/screen.scss";
@@ -39,3 +40,7 @@
 /* Utilities */
 @import "utilities/font.scss";
 @import "utilities/theme.scss";
+
+@import "utilities/align.scss";
+@import "utilities/width.scss";
+@import "utilities/spacing.scss";
