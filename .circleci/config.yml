@@ -10,6 +10,8 @@ jobs:
           - "77:05:d2:ef:29:8c:a3:11:09:1e:80:2d:ca:bf:38:56"
       - checkout
       - run: npm install node-sass@4.10.0
+      - run: mkdir www
+      - runL mkdir www/css/
       - run: ./node_modules/node-sass/bin/node-sass ./scss/toolkit.scss ./www/css/toolkit.css
       - run: ./node_modules/node-sass/bin/node-sass ./scss/scaffold.scss ./www/css/scaffold.css
       - run: cp index.html ./www/index.html
