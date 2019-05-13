@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: frapsoft/alpine-sass
+      - image: circleci/ruby:2.4.2-jessie-node
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -18,7 +18,7 @@ jobs:
   branch-deploy:
     working_directory: ~/repo
     docker:
-      - image: bbpdev/npm-sass
+      - image: circleci/ruby:2.4.2-jessie-node
     steps:
       - attach_workspace:
           at: /home/circleci/repo
