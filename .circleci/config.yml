@@ -3,14 +3,18 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: circleci/php:7.1-cli
+      - image: circleci/ruby:2.4.2-jessie-node
     steps:
       - add_ssh_keys:
           fingerprints:
           - "77:05:d2:ef:29:8c:a3:11:09:1e:80:2d:ca:bf:38:56"
       - checkout
       - run: npm install node-sass@4.10.0
-      - run: sass ./scss/toolkit.scss ./css/toolkit.css
+      - run: mkdir www
+      - run: mkdir www/css/
+      - run: ./node_modules/node-sass/bin/node-sass ./scss/toolkit.scss ./www/css/toolkit.css
+      - run: ./node_modules/node-sass/bin/node-sass ./scss/scaffolding.scss ./www/css/scaffolding.css
+      - run: cp index.html ./www/index.html
       - persist_to_workspace:
           root: /home/circleci/repo
           paths:
@@ -18,7 +22,7 @@ jobs:
   branch-deploy:
     working_directory: ~/repo
     docker:
-      - image: bbpdev/npm-sass
+      - image: circleci/ruby:2.4.2-jessie-node
     steps:
       - attach_workspace:
           at: /home/circleci/repo
@@ -51,9 +55,6 @@ jobs:
           echo 'Entered new Directory'
           chmod 777 -R www/
           chmod -R g+s www/
-          echo 'Running Portfolo Cron'
-          cd cron/
-          php portfolio.php
           echo 'Completed Deployment'
           "
   master-deploy:
