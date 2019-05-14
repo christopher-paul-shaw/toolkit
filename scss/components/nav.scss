@@ -1,13 +1,4 @@
 .c-nav {
-  background: $color-grey;
-
-  &__menu label {
-    background: $color-grey;
-  }
-
-  &__menu label:hover {
-    background: $color-grey-light;
-  }
 
   &__toggle--checkbox:checked ~ &__menu,
   &__toggle--checkbox:checked ~ &__menu label {
