@@ -1,5 +1,5 @@
 .c-nav {
-
+  background-color: inherit;
   &__toggle--checkbox:checked ~ &__menu,
   &__toggle--checkbox:checked ~ &__menu label {
     display: block;
@@ -13,12 +13,14 @@
   }
 
   &__menu {
+    background-color: inherit;
     width: 100%;
     left: 0;
     position: absolute;
   }
 
   &__menu label {
+    background-color: inherit;
     display: block;
     width: 100%;
   }
