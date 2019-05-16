@@ -1,5 +1,10 @@
 .c-nav {
   background-color: inherit;
+   * {
+    color: inherit;
+    background-color: inherit;
+    text_decoration: none;
+  }
   &__toggle--checkbox:checked ~ &__menu,
   &__toggle--checkbox:checked ~ &__menu label {
     display: block;
