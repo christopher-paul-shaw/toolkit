@@ -1,5 +1,6 @@
 .c-button {
   background: #ccc;
+  display: inline-block;
   @include core();
   &:hover {
     filter: brightness(110%);
