@@ -15,12 +15,11 @@
     width: 100%;
     height: 100%;
     display: none;
+    z-index: 99;
   }
   
-
   input[type="checkbox"]:checked ~   &__content  {
     display: block;
   }
-  
   
 }
