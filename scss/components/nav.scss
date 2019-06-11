@@ -30,7 +30,7 @@
     width: 100%;
   }
 
-  @include sm {
+  @include md {
     &__menu {
       display: inline-block;
       position: relative;
