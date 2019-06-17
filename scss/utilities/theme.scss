@@ -32,15 +32,24 @@
       color: $color-white;
       border-color: $color-blue;
     }
-        &-eclipse {
+    
+    &-eclipse {
       background: $color-eclipse;
 color: $color-white;
         border-color: $color-green;
     }
-        &-sargasso {
+    &-sargasso {
       background: $color-sargasso;
-color: $color-white;
+      color: $color-white;
         border-color: $color-green;
+    }
+    &-dark {
+      background: $color-grey-dark2;
+      color: $colour-white;
+    }
+    &-black {
+      background: $color-black;
+      color: $colour-white;
     }
     
 
