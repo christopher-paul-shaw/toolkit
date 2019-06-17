@@ -1,8 +1,4 @@
 .c-markdown {
-  * {
-    margin: 10px;
-    maxwidth: 100%;
-  }
   
   img {
     display: block;
@@ -11,8 +7,11 @@
   }
   
   pre {
-    padding: 10px;
     background: #efefef;
+  }
+ 
+  h1,h2,h3,h4,h5,pre {
+   padding: 10px;
   }
   
 }
