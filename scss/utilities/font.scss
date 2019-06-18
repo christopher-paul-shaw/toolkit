@@ -1,5 +1,26 @@
 .u-font {
-
+  
+  &-style--bold {
+    font-weight: bold;
+  }
+  
+  &-style--underline {
+    text-decoration: underline;
+  }
+  
+  &-style--overline {
+    text-decoration: overline;
+  }
+  
+  &-style--line-through {
+    text-decoration: line-through;
+  }
+  
+  &-style--italic {
+    font-style: italic; 
+  }
+  
+  
   &-size {
     font-size: $font-size-default;
 
@@ -16,10 +37,6 @@
           }
          }
      }
-   }
-
-   &--bold {
-    font-weight: bold;
    }
 
 }
