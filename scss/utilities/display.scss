@@ -1,0 +1,31 @@
+.u-display {
+
+  &--block {
+    display: block;
+  }
+  
+  &--inline {
+    display: inline-block;
+  }
+
+  &--none {
+    display: none;
+  }
+
+  @each $bp-name, $bp-value in $breakpoints {
+    @media screen and (max-width: $bp-value) {
+          &--block\@#{$bp-name} {
+            display: block;
+          }
+
+          &--inline\@#{$bp-name} {
+            display: inline-block;
+          }
+
+          &--none\@#{$bp-name} {
+            display: none;
+          }
+    }
+  }
+
+}
