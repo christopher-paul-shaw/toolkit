@@ -21,8 +21,13 @@
   }
   
   
-  h1, h2, h3, h4, h5 {
+  h1 {
     @extend .u-font-size--bravo;
   }
-  
+  h2, h3 {
+    @extend .u-font-size--charlie;
+  }
+  h4, h5 {
+    @extend .u-font-size--delta;
+  }
 }
