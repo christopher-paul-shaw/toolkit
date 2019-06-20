@@ -13,7 +13,7 @@
   }
  
   pre {
-   padding: 10px;
+   @extend .u-padding-small;
   }
   
   p, h1, h2, h3, h4, h5 {
