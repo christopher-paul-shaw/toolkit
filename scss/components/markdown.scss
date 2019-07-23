@@ -14,6 +14,10 @@
     background: #efefef;
     overflow-x: auto;
   }
+  
+  strong {
+   font-weight: bold; 
+  }
  
   pre {
    @extend .u-padding--small;
