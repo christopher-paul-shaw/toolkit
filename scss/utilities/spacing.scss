@@ -6,6 +6,18 @@
       .u-padding--#{$os-name}{
         padding: #{$os-value};
       }
+      .u-margin--vertical{
+        margin: #{$os-value} auto;
+      }
+      .u-padding--vertical{
+        padding: #{$os-value} auto ;
+      }
+      .u-margin--horizontal{
+        margin: auto #{$os-value};
+      }
+      .u-padding--horizontal{
+        padding: auto #{$os-value};
+      }
       @each $direction in $adjust-directions {
         .u-margin-#{$direction}--#{$os-name} {
           margin-#{$direction}: #{$os-value};
@@ -27,6 +39,19 @@
 
       .u-padding--#{$os-name}\@#{$bp-name} {
         padding: #{$os-value};
+      }
+ 
+      .u-margin--vertical\@#{$bp-name}{
+        margin: #{$os-value} auto;
+      }
+      .u-padding--vertical\@#{$bp-name}{
+        padding: #{$os-value} auto ;
+      }
+      .u-margin--horizontal\@#{$bp-name}{
+        margin: auto #{$os-value};
+      }
+      .u-padding--horizontal\@#{$bp-name}{
+        padding: auto #{$os-value};
       }
 
       @each $direction in $adjust-directions {
