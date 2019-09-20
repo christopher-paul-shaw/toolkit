@@ -10,7 +10,7 @@
         margin: #{$os-value} auto;
       }
       .u-padding-vertical--#{$os-name}{
-        padding: #{$os-value} auto ;
+        padding: #{$os-value} auto;
       }
       .u-margin-horizontal--#{$os-name}{
         margin: auto #{$os-value};
@@ -20,10 +20,10 @@
       }
       @each $direction in $adjust-directions {
         .u-margin-#{$direction}--#{$os-name} {
-          margin-#{$direction}: #{$os-value};
+          margin-#{$direction}: #{$os-value} !important;
         }
         .u-padding-#{$direction}--#{$os-name} {
-          padding-#{$direction}: #{$os-value};
+          padding-#{$direction}: #{$os-value} !important;
         }
       }
 }
@@ -56,11 +56,11 @@
 
       @each $direction in $adjust-directions {
         .u-margin-#{$direction}--#{$os-name}\@#{$bp-name} {
-          margin-#{$direction}: #{$os-value};
+          margin-#{$direction}: #{$os-value} !important;
         }
 
         .u-padding-#{$direction}--#{$os-name}\@#{$bp-name} {
-          padding-#{$direction}: #{$os-value};
+          padding-#{$direction}: #{$os-value} !important;
         }
       }
     }
