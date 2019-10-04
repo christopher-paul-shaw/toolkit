@@ -50,7 +50,7 @@
            }
            @each $direction in $adjust-directions {
               &-#{$direction}--#{$os-name}\@#{$bp-name} {
-                  padding-#{$direction}: #{$os-value};
+                  padding-#{$direction}: #{$os-value} !important;
               }
            }
       }    
