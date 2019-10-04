@@ -30,7 +30,7 @@
 
 
 @each $bp-name, $bp-value in $breakpoints {
-  @media screen and (max-width: $bp-value) {
+  @media screen and (min-width: $bp-value) {
     @each $os-name, $os-value in $offsets {
 
       .u-margin {
