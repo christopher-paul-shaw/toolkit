@@ -56,11 +56,11 @@
 
       @each $direction in $adjust-directions {
         .u-margin-#{$direction}--#{$os-name}\@#{$bp-name} {
-          margin-#{$direction}: #{$os-value} !important;
+          margin-#{$direction}: #{$os-value};
         }
 
         .u-padding-#{$direction}--#{$os-name}\@#{$bp-name} {
-          padding-#{$direction}: #{$os-value} !important;
+          padding-#{$direction}: #{$os-value};
         }
       }
     }
