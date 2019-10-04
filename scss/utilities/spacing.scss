@@ -5,22 +5,22 @@
 @each $os-name, $os-value in $offsets {
 
  .u-margin {
-   &--#{$os-name}\@#{$bp-name} {
+   &--#{$os-name}{
             margin: #{$os-value};
            }
            @each $direction in $adjust-directions {
-              &-#{$direction}--#{$os-name}\@#{$bp-name} {
+              &-#{$direction}--#{$os-name} {
                   margin-#{$direction}: #{$os-value};
               }
            }
       }
 
       .u-padding {
-           &--#{$os-name}\@#{$bp-name} {
+           &--#{$os-name} {
             padding: #{$os-value};
            }
            @each $direction in $adjust-directions {
-              &-#{$direction}--#{$os-name}\@#{$bp-name} {
+              &-#{$direction}--#{$os-name} {
                   padding-#{$direction}: #{$os-value};
               }
            }
