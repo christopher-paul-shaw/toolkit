@@ -1,68 +1,61 @@
 /* Padding, Margin */
- @each $os-name, $os-value in $offsets {
-      .u-margin--#{$os-name} {
-        margin: #{$os-value};
+
+
+
+@each $os-name, $os-value in $offsets {
+
+ .u-margin {
+   &--#{$os-name}\@#{$bp-name} {
+            margin: #{$os-value};
+           }
+           @each $direction in $adjust-directions {
+              &-#{$direction}--#{$os-name}\@#{$bp-name} {
+                  margin-#{$direction}: #{$os-value};
+              }
+           }
       }
-      .u-padding--#{$os-name}{
-        padding: #{$os-value};
-      }
-      .u-margin-vertical--#{$os-name}{
-        margin: #{$os-value} auto;
-      }
-      .u-padding-vertical--#{$os-name}{
-        padding: #{$os-value} auto;
-      }
-      .u-margin-horizontal--#{$os-name}{
-        margin: auto #{$os-value};
-      }
-      .u-padding-horizontal--#{$os-name}{
-        padding: auto #{$os-value};
-      }
-      @each $direction in $adjust-directions {
-        .u-margin-#{$direction}--#{$os-name} {
-          margin-#{$direction}: #{$os-value} !important;
-        }
-        .u-padding-#{$direction}--#{$os-name} {
-          padding-#{$direction}: #{$os-value} !important;
-        }
-      }
+
+      .u-padding {
+           &--#{$os-name}\@#{$bp-name} {
+            padding: #{$os-value};
+           }
+           @each $direction in $adjust-directions {
+              &-#{$direction}--#{$os-name}\@#{$bp-name} {
+                  padding-#{$direction}: #{$os-value};
+              }
+           }
+      }    
 }
+
+
 
 @each $bp-name, $bp-value in $breakpoints {
   @media screen and (max-width: $bp-value) {
-    
     @each $os-name, $os-value in $offsets {
 
-      .u-margin--#{$os-name}\@#{$bp-name} {
-        margin: #{$os-value};
+      .u-margin {
+           &--#{$os-name}\@#{$bp-name} {
+            margin: #{$os-value};
+           }
+           @each $direction in $adjust-directions {
+              &-#{$direction}--#{$os-name}\@#{$bp-name} {
+                  margin-#{$direction}: #{$os-value};
+              }
+           }
       }
 
-      .u-padding--#{$os-name}\@#{$bp-name} {
-        padding: #{$os-value};
-      }
- 
-      .u-margin-vertical--#{$os-name}\@#{$bp-name}{
-        margin: #{$os-value} auto;
-      }
-      .u-padding-vertical--#{$os-name}\@#{$bp-name}{
-        padding: #{$os-value} auto ;
-      }
-      .u-margin-horizontal--#{$os-name}\@#{$bp-name}{
-        margin: auto #{$os-value};
-      }
-      .u-padding-horizontal--#{$os-name}\@#{$bp-name}{
-        padding: auto #{$os-value};
-      }
-
-      @each $direction in $adjust-directions {
-        .u-margin-#{$direction}--#{$os-name}\@#{$bp-name} {
-          margin-#{$direction}: #{$os-value};
-        }
-
-        .u-padding-#{$direction}--#{$os-name}\@#{$bp-name} {
-          padding-#{$direction}: #{$os-value};
-        }
-      }
-    }
-  }
+      .u-padding {
+           &--#{$os-name}\@#{$bp-name} {
+            padding: #{$os-value};
+           }
+           @each $direction in $adjust-directions {
+              &-#{$direction}--#{$os-name}\@#{$bp-name} {
+                  padding-#{$direction}: #{$os-value};
+              }
+           }
+      }    
+     }
+   }
+ }
 }
+       
