@@ -1,25 +1,25 @@
 .u-font {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none !important;
+  color: inherit !important;
   
   &-style--bold {
-    font-weight: bold;
+    font-weight: bold !important;
   }
   
   &-style--underline {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
   
   &-style--overline {
-    text-decoration: overline;
+    text-decoration: overline !important;
   }
   
   &-style--line-through {
-    text-decoration: line-through;
+    text-decoration: line-through !important;
   }
   
   &-style--italic {
-    font-style: italic; 
+    font-style: italic !important; 
   }
   
   
