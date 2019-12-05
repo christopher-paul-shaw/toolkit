@@ -32,31 +32,14 @@ jobs:
           cd /home/circleci
           chmod -R g+w ./repo/www/
           tar --exclude=repo/.git -czf - repo/ | ssh -o StrictHostKeyChecking=no deploy@chris-shaw.com "
-          set -e
           stream_directory=stream_$CIRCLE_BRANCH
           rm -rf \$stream_directory
           mkdir \$stream_directory
           cd \$stream_directory
           tar -xzf -
-          echo 'Decompressed Archive'
-          deploy_directory=/var/www/dev/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH
-          rm -rf \$deploy_directory
-          echo 'Removed Old Directory'
-          mkdir -p \$deploy_directory
-          echo 'Created New Directory'
-          cp --no-preserve=mode,ownership --recursive ./repo \$deploy_directory.new
-          if [ -d "\$deploy_directory.old" ]; then echo -n 'Removing old directory ... '; rm -rf \$deploy_directory.old; echo 'Done.'; fi
-          echo -n 'Archiving old directory ... '
-          if [ -d "\$deploy_directory" ]; then mv \$deploy_directory \$deploy_directory.old; fi
-          echo 'Done.'
-          echo -n 'Moving files to new directory ... '
-          mv \$deploy_directory.new \$deploy_directory
-          echo 'Done.'
-          cd \$deploy_directory
-          echo 'Entered new Directory'
-          chmod 777 -R www/
-          chmod -R g+s www/
-          echo 'Completed Deployment'
+
+          cd ~
+          ./deploy.sh $CIRCLE_PROJECT_REPONAME $CIRCLE_BRANCH
           "
   master-deploy:
     working_directory: ~/repo
