@@ -5,9 +5,6 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.2-jessie-node
     steps:
-      - add_ssh_keys:
-          fingerprints:
-          - "77:05:d2:ef:29:8c:a3:11:09:1e:80:2d:ca:bf:38:56"
       - checkout
       - run: npm install node-sass@4.10.0
       - run: mkdir www
@@ -25,6 +22,9 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.2-jessie-node
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "23:3d:99:97:bf:0d:53:70:99:cd:3a:b4:a6:80:e3:81"
       - attach_workspace:
           at: /home/circleci/repo
       - run: |
