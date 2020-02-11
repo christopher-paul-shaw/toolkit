@@ -13,3 +13,5 @@ jobs:
         echo test, and deploy your project.
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v1.2.5
+      with:
+        build_dir: build
