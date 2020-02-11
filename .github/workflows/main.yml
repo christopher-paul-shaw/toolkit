@@ -16,9 +16,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.2.1
       with:
-
-
-
         BRANCH: master
         FOLDER: public
-
