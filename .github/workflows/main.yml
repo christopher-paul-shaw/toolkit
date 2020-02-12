@@ -12,7 +12,7 @@ jobs:
       -
         name: Build
         run: |
-          cp src public
+          cp -r src public
           sass scss/fonts.scss public/fonts.css
           sass scss/scaffolding.scss public/scaffolding.css
           sass scss/toolkit.scss public/toolkit.css
