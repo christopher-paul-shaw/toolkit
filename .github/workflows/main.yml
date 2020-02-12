@@ -12,18 +12,10 @@ jobs:
       -
         name: Build
         run: |
-          mkdir public
-          cat > public/index.html <<EOL
-          <!doctype html>
-          <html>
-            <head>
-              <title>GitHub Pages deployed!</title>
-            </head>
-            <body>
-              <p>GitHub Pages with <strong>${{ github.sha }}</strong> commit ID has been deployed through <a href="https://github.com/marketplace/actions/github-pages">GitHub Pages action</a> successfully.</p>
-            </body>
-          </html>
-          EOL
+          cp src public
+          sass scss/fonts.scss public/fonts.css
+          sass scss/scaffolding.scss public/scaffolding.css
+          sass scss/toolkit.scss public/toolkit.css
       -
         name: Deploy
         if: success()
