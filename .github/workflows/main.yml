@@ -13,12 +13,8 @@ jobs:
         name: Build
         run: |
           cp -r src public
-      - 
-        name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.1.6
-        with:
-          source: scss/toolkit.scss
-          destination: ./toolkit.css
+          npm install node-sass@4.12.0
+          sass scss/toolkit.scss public/toolkit.css
       -
         name: Deploy
         if: success()
