@@ -14,7 +14,7 @@ jobs:
         run: |
           cp -r src public
           npm install node-sass@4.12.0
-          node-sass scss/toolkit.scss public/toolkit.css
+          sass scss/toolkit.scss public/toolkit.css
       -
         name: Deploy
         if: success()
