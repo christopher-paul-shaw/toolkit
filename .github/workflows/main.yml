@@ -14,13 +14,7 @@ jobs:
         run: |
           cp -r src public
       - 
-        name: Sass
-        uses: gha-utilities/sass-build@v0.1.6
-        with:
-          source:  scss/toolkit.scss 
-          destination: public/toolkit.css
-        
-      - name: Compile CSS from SCSS files
+        name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.1.6
         with:
           source: scss/main.scss
