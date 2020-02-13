@@ -17,8 +17,8 @@ jobs:
         name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.1.6
         with:
-          source: scss/main.scss
-          destination: ./main.css
+          source: scss/toolkit.scss
+          destination: ./toolkit.css
       -
         name: Deploy
         if: success()
