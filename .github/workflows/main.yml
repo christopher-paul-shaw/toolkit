@@ -19,7 +19,6 @@ jobs:
         with:
           source:  scss/toolkit.scss 
           destination: public/toolkit.css
-        :  
         
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.1.6
