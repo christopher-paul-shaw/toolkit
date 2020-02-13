@@ -13,9 +13,12 @@ jobs:
         name: Build
         run: |
           cp -r src public
-          sass scss/fonts.scss public/fonts.css
-          sass scss/scaffolding.scss public/scaffolding.css
-          sass scss/toolkit.scss public/toolkit.css
+      - 
+        name: Sass
+        uses: gha-utilities/sass-build@v0.1.6
+        with:
+          source:  scss/toolkit.scss 
+          destination: public/toolkit.css
       -
         name: Deploy
         if: success()
