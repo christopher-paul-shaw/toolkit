@@ -17,9 +17,9 @@ jobs:
         uses: gha-utilities/sass-build@v0.1.6
         with:
         # Relative path to SASS or SCSS file, eg. _scss/main.scss
-          source: scss/test.scss
+          source: test.scss
         # Path compiled CSS should be saved, eg. ~/workspace_sass/assets/css/main.css
-          destination: public/test.css
+          destination: test.css
       -
         name: Deploy
         if: success()
