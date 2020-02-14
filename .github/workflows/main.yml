@@ -13,7 +13,7 @@ jobs:
         name: Build
         run: |
           cp -r src public
-          npm install -g sass
+          npm install sass
           sass test.scss test.css
       -
         name: Deploy
