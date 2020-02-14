@@ -13,8 +13,13 @@ jobs:
         name: Build
         run: |
           cp -r src public
-          npm install node-sass@4.12.0
-          sass scss/toolkit.scss public/toolkit.css
+      - name: Sass Build
+        uses: gha-utilities/sass-build@v0.1.6
+        with:
+        # Relative path to SASS or SCSS file, eg. _scss/main.scss
+          source: scss/test.scss
+        # Path compiled CSS should be saved, eg. ~/workspace_sass/assets/css/main.css
+          destination: public/test.css
       -
         name: Deploy
         if: success()
