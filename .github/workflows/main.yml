@@ -13,13 +13,8 @@ jobs:
         name: Build
         run: |
           cp -r src public
-      - name: Sass Build
-        uses: gha-utilities/sass-build@v0.1.6
-        with:
-        # Relative path to SASS or SCSS file, eg. _scss/main.scss
-          source: test.scss
-        # Path compiled CSS should be saved, eg. ~/workspace_sass/assets/css/main.css
-          destination: test.css
+          npm install -g sass
+          sass test.scss test.css
       -
         name: Deploy
         if: success()
