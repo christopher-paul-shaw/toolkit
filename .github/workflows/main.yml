@@ -16,8 +16,8 @@ jobs:
         name: Build
         run: |
           cp -r src public
-          ls
-          sass sample.scss sample.css     
+          sass sample.scss sample.css
+          sass scss/toolkit.scss public/toolkit.css     
       -
         name: Deploy
         if: success()
