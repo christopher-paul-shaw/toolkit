@@ -16,6 +16,7 @@ jobs:
         name: Build
         run: |
           cp -r src public
+          mkdir -p public/css/
           sass sample.scss sample.css
           sass scss/toolkit.scss public/css/toolkit.css 
           sass scss/fonts.scss public/css/fonts.css    
