@@ -18,7 +18,7 @@ jobs:
           cp -r src public
           mkdir -p public/css/
           sass sample.scss sample.css
-          sass scss/toolkit.scss public/css/toolkit.css 
+          sass scss/toolkit.scss public/css/toolkit2.css 
           sass scss/fonts.scss public/css/fonts.css    
           sass scss/scaffolding.scss public/css/scaffolding.css        
       -
