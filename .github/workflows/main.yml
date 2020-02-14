@@ -16,6 +16,7 @@ jobs:
         name: Build
         run: |
           cp -r src public
+          ls
           sass test.scss test.css     
       -
         name: Deploy
