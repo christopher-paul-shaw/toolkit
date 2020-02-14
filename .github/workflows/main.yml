@@ -9,12 +9,14 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v1
+      - name: Install SASS
+        run: | 
+          sudo apt install sass
       -
         name: Build
         run: |
           cp -r src public
-          npm install sass
-          sass test.scss test.css
+          sass public/toolkit.scss public/toolkit.css        
       -
         name: Deploy
         if: success()
