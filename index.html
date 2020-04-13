@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Toolkit</title>
+      <link rel="stylesheet" media="screen" href="./css/toolkit.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.open( "GET", "https://menu.chris-shaw.com/", true);
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState == 4) {
+				var parser = new DOMParser();
+				var newDom = parser.parseFromString(xhr.responseText,"text/html");	   	
+				let nav = newDom.querySelector(".c-nav");
+				document.querySelector('body').prepend(nav);
+			}
+		}
+		xhr.send( null );
+		</script>
+   </head>
+   <body>
+      <div class="o-box  c-box--border-bottom c-box--grey u-margin-bottom--large u-theme-grey">
+         <div class="o-container">
+            <div class="o-layout">
+               <div class="o-layout__item u-width--2-12 u-padding--small u-align__text">
+                  <span class="u-font-size--charlie">CPS</span>
+               </div>
+               <div class="o-layout__item u-width--10-12@sm u-padding--small u-align__text--right">
+                  <h1 class="u-font-size--charlie">ToolKit </h1>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="o-container">
+         <div class="o-layout">
+            
+            <div class="o-layout__item u-width--12-12 u-width--4-12@sm u-width--2-12@md u-padding-right--none u-padding-right--tiny@sm">
+               <div class="o-box c-box  c-box--round u-margin-bottom--small">
+                  <div class="o-box c-box c-box--border-bottom u-theme-blue u-padding--small">Menu</div>
+                  <ul class="o-list o-list__container--no-bullets c-sidemenu c-box  c-box--border">
+                     <li class="u-padding--tiny u-theme-grey">Components</li>
+                     <li><a href="#accordion" class="u-padding--tiny">Accordion</a></li>
+                     <li><a href="#blocks" class="u-padding--tiny">Blocks</a></li>
+                     <li><a href="#box" class="u-padding--tiny">Box</a></li>
+                     <li><a href="#button" class="u-padding--tiny">Button</a></li>
+                     <li><a href="#input" class="u-padding--tiny">Input</a></li>
+                     <li><a href="#image" class="u-padding--tiny">Image</a></li>
+                     <li><a href="#layout" class="u-padding--tiny">Layout</a></li>
+                     <li><a href="#modal" class="u-padding--tiny">Modal</a></li>
+                     <li><a href="#navigation" class="u-padding--tiny">Navigation</a></li>
+                     <li><a href="#table" class="u-padding--tiny">Table</a></li>
+                     <li><a href="#tabs" class="u-padding--tiny">Tabs</a></li>
+                     <li class="u-padding--tiny u-theme-grey ">Utilities</li>
+                     <li><a href="#alignment" class="u-padding--tiny">Alignment</a></li>
+                     <li><a href="#font-size" class="u-padding--tiny">Font</a></li>
+                     <li><a href="#margin" class="u-padding--tiny">Margin</a></li>
+                     <li><a href="#padding" class="u-padding--tiny">Padding</a></li>
+                     <li><a href="#themes" class="u-padding--tiny">Themes</a></li>
+                     <li><a href="#width" class="u-padding--tiny">Width</a></li>
+                  </ul>
+                  <div class="o-box c-box c-box--border-bottom u-theme-blue u-padding--small"></div>
+               </div>
+            </div>
+         
+            <div class="o-layout__item u-width--12-12 u-width--8-12@sm u-width--10-12@md">
+               <div class="o-box c-box--border c-box--round u-padding--medium">
+                  
+                  <div class="o-box u-margin-bottom--small u-padding-bottom--small c-box c-box--border-bottom">
+                     <a name="summary"></a>
+                     <h2 class="u-font-size--bravo">Summary</h2>
+                  </div>
+                  
+                  <div class="o-box u-margin-bottom--small">
+                     <p class="u-margin-bottom--small">
+                        This toolkit is a project to bring both consistancy to the designs I create and to also extend my knowledge in front end technologies, especially SASS.
+                     </p>
+                     <p class="u-margin-bottom--small u-padding-bottom--small ">
+                        The Toolkit itself is focused around two main files:
+                     </p>
+                     <div class="u-font-size--charlie u-margin-bottom--small">Scaffolding.css</div>
+                     <p class="u-margin-bottom--small">
+                        &#x3C;link rel=&#x22;stylesheet&#x22; media=&#x22;screen&#x22; href=&#x22;https://toolkit.chris-shaw.com/css/scaffolding.css&#x22; /&#x3E;
+                     </p>
+                     <p class="u-margin-bottom--small">
+                        Basic Layout of the page, it provides utilities to add padding, margins, alignments and widths along with a flexbox based grid.
+                        This is the basis for all the toolkit and is intended soly to position items on the screen and does not apply any design to the content.
+                     </p>
+                     <div class="u-font-size--charlie u-margin-bottom--small">Toolkit.css</div>
+                     <p class="u-margin-bottom--small">
+                        &#x3C;link rel=&#x22;stylesheet&#x22; media=&#x22;screen&#x22; href=&#x22;https://toolkit.chris-shaw.com/css/toolkit.css&#x22; /&#x3E;
+                     </p>
+                     <p class="u-margin-bottom--small">
+                        This contains all the objects and components relating to design, and will contain items such as navigation, boxes, inputs, buttons and any other
+                        reusable compontent as they are created. Its intended to be a quick option for adding predesigned features to a website.
+                     </p>
+                  </div>
+                  
+                  <div class="o-box u-margin-bottom--small u-padding-bottom--small c-box c-box--border-bottom">
+                     <a name="Components"></a>
+                     <h3 class="u-font-size--bravo">Components</h3>
+                  </div>
+                  
+                  <p class="u-margin-bottom--small">
+                     Components are reusable chunks of code and css to give consistency to a project and reduce reinventing features.
+                  </p>
+                  
+                  <div class="o-box u-padding-bottom--small ">
+                     <a name="accordion"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Accordion</h3>
+                     <div class="o-accordion c-accordion">
+                        <input type="radio" name="accordion" id="accordion1" checked class="o-accordion__toggle" />
+                        <label for="accordion1" class="o-accordion__label u-padding--small">Tab 1</label>
+                        <div class="o-accordion__block u-padding--small">
+                           TEST CONTENT FOR SLIDE 1
+                        </div>
+                        <input type="radio" name="accordion" id="accordion2" class="o-accordion__toggle" />
+                        <label for="accordion2" class="o-accordion__label u-padding--small">Tab 2</label>
+                        <div class="o-accordion__block u-padding--small">
+                           TEST CONTENT FOR SLIDE 2
+                        </div>
+                        <input type="radio" name="accordion" id="accordion3" class="o-accordion__toggle" />
+                        <label for="accordion3" class="o-accordion__label u-padding--small">Tab 3</label>
+                        <div class="o-accordion__block u-padding--small">
+                           TEST CONTENT FOR SLIDE 3
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small ">
+                     <a name="blocks"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Blocks</h3>
+                     <div class="o-blocks c-blocks">
+                        <input type="checkbox" name="blocks" id="block1" checked class="o-blocks__toggle" />
+                        <label for="block1" class="o-blocks__label u-padding--small">Tab 1</label>
+                        <div class="o-blocks__block u-padding--small">
+                           TEST CONTENT FOR SLIDE 1
+                        </div>
+                        <input type="checkbox" name="blocks" id="block2" class="o-blocks__toggle" />
+                        <label for="block2" class="o-blocks__label u-padding--small">Tab 2</label>
+                        <div class="o-blocks__block u-padding--small">
+                           TEST CONTENT FOR SLIDE 2
+                        </div>
+                        <input type="checkbox" name="blocks" id="block3" class="o-blocks__toggle" />
+                        <label for="block3" class="o-blocks__label u-padding--small">Tab 3</label>
+                        <div class="o-blocks__block u-padding--small">
+                           TEST CONTENT FOR SLIDE 3
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small  ">
+                     <a name="box"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Box</h3>
+                     <div class="o-box c-box c-box--border u-padding--medium c-box--round u-margin-bottom--small">Content</div>
+                     
+
+                     <div class="o-box c-box c-box--border c-box--round u-theme-blue u-margin-bottom--small">
+                       <div class="o-box c-box u-padding--small ">TITLE</div>
+                       <div class="o-box c-box u-padding--small u-theme">CONTENT</div>
+                     </div>
+
+                     <div class="o-box c-box c-box--border c-box--round u-margin-bottom--small u-theme-grey">
+                       <div class="o-box c-box u-padding--small ">TITLE</div>
+                       <div class="o-box c-box u-padding--small u-theme">CONTENT</div>
+                     </div>
+
+                     <div class="o-box c-box c-box--border u-margin-bottom--small u-theme-grey">
+                       <div class="o-box c-box u-padding--small ">TITLE</div>
+                       <div class="o-box c-box u-padding--small u-theme">CONTENT</div>
+                     </div>
+
+                     <div class="o-box c-box c-box--border u-margin-bottom--small u-theme-red">
+                       <div class="o-box c-box u-padding--small ">TITLE</div>
+                       <div class="o-box c-box u-padding--small u-theme">CONTENT</div>
+                     </div>
+
+                     <div class="o-box c-box c-box--border u-margin-bottom--small u-theme-red">
+                       <div class="o-box c-box u-padding--tiny ">TITLE</div>
+                       <div class="o-box c-box u-padding--tiny u-theme">CONTENT</div>
+                     </div>
+
+                     <div class="o-box c-box c-box--border c-box--round u-margin-bottom--small">
+                       <div class="o-box c-box u-padding--small ">TITLE</div>
+                       <div class="o-box c-box u-padding--small u-theme">CONTENT</div>
+                     </div>
+
+
+
+
+                     
+                     
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small  ">
+                     <a name="button"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Button</h3>
+                     <button class="o-button c-button u-padding--tiny">Text</button>
+                     <button class="o-button c-button o-button--round u-padding--tiny c-button--border">Text</button>
+                     <button class="o-button c-button o-button--round c-button--green u-padding--tiny">Text</button>
+                     <button class="o-button c-button o-button--round c-button--border u-theme-green u-padding--tiny">TextX</button>
+                     <button class="o-button c-button o-button--round c-button--error u-padding--tiny">Text</button>
+                     <button class="o-button c-button o-button--round u-padding--huge u-theme">Text</button>
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small  ">
+                     <a name="input"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Input</h3>
+                     <p>.c-input can be applied to add basic structure to inputs</p>
+                     <div class="o-box c-box">
+                        <div class="c-input">
+                           <label>Email Address</label>
+                           <input type="text" name="email" class="u-padding--tiny" />
+                        </div>
+                        <div class="c-input">
+                           <label>Password</label>
+                           <input type="password" name="password" />
+                        </div>
+                        <div class="c-input">
+                           <label>Domain</label>
+                           <select name="domain" class="c-box--round u-padding--tiny">
+                              <option>Select</option>
+                           </select>
+                        </div>
+                        <input type="checkbox"> Remember Me
+                        <input type="radio">Radio
+                        <button class="c-button u-theme-red">Button</button>
+                     </div>
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small  ">
+                     <a name="image"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Image</h3>
+                     <p  class="u-margin-bottom--small">
+                        Prevent image from overflowing and allow image sizing and tweaks.
+                     </p>
+                     <img src="https://wow.olympus.eu/webfile/img/1632/x=1024/oly_testwow_stage.jpg" alt="" class="c-image c-image__size--small" />
+                     <img src="https://wow.olympus.eu/webfile/img/1632/x=1024/oly_testwow_stage.jpg" alt="" class="c-image c-image__size--medium" />
+                     <img src="https://wow.olympus.eu/webfile/img/1632/x=1024/oly_testwow_stage.jpg" alt="" class="c-image" />
+                     <img src="https://wow.olympus.eu/webfile/img/1632/x=1024/oly_testwow_stage.jpg" alt="" class="c-image c-image__size--medium c-image--round" />
+                     <img src="https://wow.olympus.eu/webfile/img/1632/x=1024/oly_testwow_stage.jpg" alt="" class="c-image c-image__size--medium c-image--border" />
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small ">
+                     <a name="layout"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Layout</h3>
+                     <p>
+                        The layouts are built using the o-layout object, this is a display flex container and contains the elements of the layout. This is combined with the Utility Class Width, which allows assigning widths based on a 12 column occupation. See <a href="#width">Width</a>.
+                     </p>
+                     <p class="u-padding-bottom--medium">
+                        <b>.u-width--1-12</b> occupies one of twelve available columns up to <b>.u-width--12-12</b> which occupies all, or the equivalent of 100% width.
+                     </p>
+                     <div class="c-example">
+                        <div class="o-layout ">
+                           <div class="o-layout__item ">
+                              Item 1
+                           </div>
+                           <div class="o-layout__item">
+                              Item 2
+                           </div>
+                           <div class="o-layout__item">
+                              Item 2
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small  ">
+                     <a name="modal"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Modal</h3>
+                     <div class="c-modal  u-padding--small">
+                        <input type="checkbox" id="modal1" class="c-modal__toggle"/>
+                        <label for="modal1" class="c-button--round u-theme-blue  u-padding--tiny">Show Modal</label>
+                        <div class="c-modal__content">
+                           <div class="o-layout">
+                              <div class="o-container c-box--border c-box--round c-box--shadow">
+                                 <div class="c-box u-theme-grey u-padding--tiny">Title</div>
+                                 <div class="c-box u-padding--tiny u-theme">Content</div>
+                                 <div class="c-box u-theme-grey u-align__text--right"><label for="modal1" class="c-button u-theme-blue u-padding--tiny c-button--round u-margin--tiny">Close</label></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="o-box u-padding-bottom--small ">
+                     <a name="navigation"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Navigation</h3>
+                     <div class="c-nav u-theme-blue">
+                        <div class="o-container">
+                           <div class="o-layout">
+                              <div class="o-layout__item u-width--6-12">
+                                 <div class="o-box c-box u-align__text u-padding--small">SiteName</div>
+                              </div>
+                              <div class="o-layout__item u-width--6-12">
+                                 <div class="o-box u-align__text--right">
+                                    <label for="navigation" class="c-nav__toggle u-padding--small">Menu</label>
+                                    <input type="checkbox" id="navigation" class="c-nav__toggle--checkbox">
+                                    <div class="c-nav__menu u-theme-blue">
+                                       <label class="u-padding--small">
+                                       <a href="#">Link</a>
+                                       </label>      
+                                       <label class="u-padding--small">
+                                       <a href="#">Link</a>
+                                       </label>  
+                                       <label class="u-padding--small">
+                                       <a href="#">Link</a>
+                                       </label>  
+                                       </label>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               
+                  <div class="o-box u-padding-bottom--small ">
+                     <a name="table"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Table</h3>
+                     <table class="c-table">
+                        <thead>
+                           <tr>
+                              <th class="u-width--6-12">Item</th>
+                              <th class="u-width--4-12">Due Date</th>
+                              <th class="u-width--2-12">Amount</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>system1</td>
+                              <td>04/01/2016</td>
+                              <td>&pound;1,190</td>
+                           </tr>
+                           <tr>
+                              <td>system2</td>
+                              <td>03/01/2016</td>
+                              <td>&pound;2,443</td>
+                           </tr>
+                           <tr>
+                              <td>system3</td>
+                              <td>07/01/2016</td>
+                              <td>&pound;1,181</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               
+                  <div class="o-box u-padding-bottom--small ">
+                     <a name="tabs"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Tabs</h3>
+                     <div class="o-tabs c-tabs">
+                        <label for="option1" class="u-padding--small o-tabs__label c-tabs__label">Tab 1</label>
+                        <label for="option2" class="u-padding--small o-tabs__label c-tabs__label">Tab 2</label>
+                        <label for="option3" class="u-padding--small o-tabs__label c-tabs__label">Tab 3</label>
+                        <label for="option4" class="u-padding--small o-tabs__label c-tabs__label">Tab 4</label>
+                        <input type="radio" class="o-tabs__toggle" name="tabs" id="option1" checked />
+                        <div class="o-tabs__tab c-tabs__tab u-padding--medium">
+                           TEST CONTENT FOR SLIDE 1
+                        </div>
+                        <input type="radio" class="o-tabs__toggle" name="tabs" id="option2" />
+                        <div class="o-tabs__tab c-tabs__tab u-padding--medium">
+                           TEST CONTENT FOR SLIDE 2
+                        </div>
+                        <input type="radio" class="o-tabs__toggle" name="tabs" id="option3" />
+                        <div class="o-tabs__tab c-tabs__tab u-padding--medium">
+                           TEST CONTENT FOR SLIDE 3
+                        </div>
+                        <input type="radio" class="o-tabs__toggle" name="tabs" id="option4" />
+                        <div class="o-tabs__tab c-tabs__tab u-padding--medium">
+                           TEST CONTENT FOR SLIDE 4
+                        </div>
+                     </div>
+                  </div>
+               
+                  <div class="o-box u-margin-bottom--small u-padding-bottom--small c-box c-box--border-bottom">
+                     <a name="utilities"></a>
+                     <h3 class="u-font-size--bravo">Utilities</h3>
+                  </div>
+               
+                  <p class="u-margin-bottom--small">
+                     Utilities are single use classes to be attacthed directly to an element to add specific behaviour, such as adding a colour, padding, width.
+                  </p>
+               
+                  <div class="o-box   u-padding-bottom--small">
+                     <a name="alignment"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Align</h3>
+                     <p class="u-margin-bottom--small">Alter the alignment of content within the page.</p>
+                     <div class="o-box c-box u-align__text c-box--border">.u-align__text</div>
+                     <div class="o-box c-box u-align__text--right c-box--border">.u-align__text--right</div>
+                     <div class="o-box c-box u-align__text--center c-box--border">.u-align__text--center</div>
+                  </div>
+               
+                  <div class="o-box   u-padding-bottom--small">
+                     <a name="font-size"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Font</h3>
+                     <p class="u-margin-bottom--small">Apply common font sizes to content</p>
+                     <div class="o-box u-font-size--alpha">.u-font-size--alpha</div>
+                     <div class="o-box u-font-size--bravo">.u-font-size--bravo</div>
+                     <div class="o-box u-font-size--charlie">.u-font-size--charlie</div>
+                     <div class="o-box u-font-size--delta">.u-font-size--delta</div>
+                  </div>
+               
+                  <div class="o-box   u-padding-bottom--small">
+                     <a name="margin"></a>
+                     <h3 class="u-font-size--charlie u-margin-bottom--small">Margin</h3>
+                     <p class="u-margin-bottom--small">Adjust content positioning through spacing outside of the element (margin)</p>
+                     <div class="o-box c-box u-margin--tiny c-box--border">.u-margin--tiny</div>
+                     <div class="o-box c-box u-margin--small c-box--border">.u-margin--small</div>
+                     <div class="o-box c-box u-margin--medium c-box--border">.u-margin--medium</div>
+                     <div class="o-box c-box u-margin--large c-box--border">.u-margin--large</div>
+                     <div class="o-box c-box u-margin--huge c-box--border">.u-margin--huge</div>
+                     <div class="o-box c-box u-margin-bottom--huge c-box--border">.u-margin-bottom--huge</div>
+                     <div class="o-box c-box u-margin-right--huge c-box--border">.u-margin-right--huge</div>
+                  </div>
+               
+                  <div class="o-box   u-padding-bottom--small ">
+                     <a name="padding"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Padding</h3>
+                     <p class="u-margin-bottom--small">Adjust content positioning through spacing within of the element (padding)</p>
+                     <div class="o-box c-box u-padding--tiny c-box--border">.u-padding--tiny</div>
+                     <div class="o-box c-box u-padding--small c-box--border">.u-padding--small</div>
+                     <div class="o-box c-box u-padding--medium c-box--border">.u-padding--medium</div>
+                     <div class="o-box c-box u-padding--large c-box--border">.u-padding--large</div>
+                     <div class="o-box c-box u-padding--huge c-box--border">.u-padding--huge</div>
+                     <div class="o-box c-box u-padding-bottom--huge">
+                        <div class="c-box  c-box--border">.u-padding-bottom--huge</div>
+                     </div>
+                     <div class="o-box c-box u-padding-right--huge">
+                        <div class="c-box  c-box--border">.u-padding-right--huge</div>
+                     </div>
+                  </div>
+               
+                  <div class="o-box   u-padding-bottom--small">
+                     <a name="themes"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Themes</h3>
+                     <p class="u-margin-bottom--small">Apply colour pallets to elements including border, font  and background colours.</p>
+                     <div class="o-box u-theme-grey u-margin--tiny--bottom">u-theme-grey</div>
+                     <div class="o-box u-theme-green u-margin--tiny--bottom">u-theme-green</div>
+                     <div class="o-box u-theme-orange u-margin--tiny--bottom">u-theme-orange</div>
+                     <div class="o-box u-theme-red u-margin--tiny--bottom">u-theme-red</div>
+                     <div class="o-box u-theme-blue u-margin--tiny--bottom">u-theme-blue</div>
+                     <div class="o-box u-theme-eclipse u-margin--tiny--bottom">u-theme-eclipse</div>
+                     <div class="o-box u-theme-sargasso u-margin--tiny--bottom">u-theme-sargasso</div>
+                  </div>
+               
+                  <div class="o-box   u-padding-bottom--small">
+                     <a name="width"></a>
+                     <h3 class="u-font-size--charlie u-padding-bottom--small">Width</h3>
+                     <p class="u-margin-bottom--small">
+                        The width utilities are meant to be used with the layout object for a simple grid system.
+                     </p>
+                     <div class="c-example">
+                        <div class="o-layout">
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border">u-width--4-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--2-12">
+                              <div class="c-box c-box--border">u-width--2-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--2-12">
+                              <div class="c-box c-box--border">u-width--2-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border">u-width--4-12</div>
+                           </div>
+                        </div>
+                        <div class="o-layout">
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border">u-width--4-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border">u-width--4-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border">u-width--4-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border"> u-width--4-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border">u-width--4-12</div>
+                           </div>
+                           <div class="o-layout__item u-width--4-12">
+                              <div class="c-box c-box--border">u-width--4-12</div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="o-box  u-margin--large--top">
+         <div class="o-container">
+            <div class="o-layout">
+               <div class="o-layout__item u-padding--medium u-align__text--center">
+                  Copyright <a href="https://www.chris-shaw.com">Christoper Shaw</a> 2019
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
